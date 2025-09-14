@@ -1,16 +1,16 @@
 /**
  * Daily Schedule Reminder Script
- * Runs at 8:00 AM daily to send reminder emails about tomorrow's assignments
+ * Runs at 10:00 AM daily to send reminder emails about tomorrow's assignments
  * 
  * Setup Instructions:
  * 1. Open Google Sheets with your schedule data
  * 2. Go to Extensions > Apps Script
  * 3. Replace the default code with this script
  * 4. Save the project
- * 5. Set up a daily trigger for 8:00 AM
+ * 5. Set up a daily trigger for 10:00 AM
  */
 
-// Main function that will be triggered daily at 8:00 AM
+// Main function that will be triggered daily at 10:00 AM
 function sendDailyReminders() {
   try {
     // Get the active spreadsheet
@@ -286,14 +286,19 @@ function setupDailyTrigger() {
     }
   });
   
-  // Create new daily trigger for 8:00 AM
+
+//ITT LEHET ÁLLÍTANI HOGY MIKOR KÜLDJE
+//nincs atMinute() függvény
+
+
+  // Create new daily trigger for 10:00 AM
   ScriptApp.newTrigger('sendDailyReminders')
     .timeBased()
     .everyDays(1)
     .atHour(10) //inkább legyen kicsit kesobb 10kor, nehogy valakit zavarjon eggel
     .create();
   
-  console.log('Napi trigger beállítva 8:00-kor a sendDailyReminders függvényhez.');
+  console.log('Napi trigger beállítva 10:00-kor a sendDailyReminders függvényhez.');
 }
 
 /**
