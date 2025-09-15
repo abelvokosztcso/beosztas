@@ -216,7 +216,7 @@ function sendReminderEmail(email, personName, tasks) {
     
     // Format the date nicely
     const eventDate = new Date(tasks[0].date);
-    const formattedDate = Utilities.formatDate(eventDate, Session.getScriptTimeZone(), 'yyyy. MMMM dd. (EEEE)');
+    const formattedDate = Utilities.formatDate(eventDate, Session.getScriptTimeZone(), 'yyyy. MMMM dd.');       //    (EEEE) irná a napot is, de angolul, es nem tudom hogy lehetne magyarra
     
     // Create task list HTML
     let taskListHtml = '';
